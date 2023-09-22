@@ -24,6 +24,11 @@
     "tailwindcss": "^3.3.3"
   },
   "dependencies": {
-    "daisyui": "^3.7.7"
+    "@vee-validate/zod": "^4.11.6",
+    "clsx": "^2.0.0",
+    "daisyui": "^3.7.7",
+    "tailwind-merge": "^1.14.0",
+    "vee-validate": "^4.11.6",
+    "zod": "^3.22.2"
   }
 }
