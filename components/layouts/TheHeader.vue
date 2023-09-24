@@ -14,9 +14,3 @@
     </SimpleBlock>
   </div>
 </template>
-
-<script lang="ts" setup>
-import SimpleBlock from "./SimpleBlock.vue";
-</script>
-
-<style></style>
