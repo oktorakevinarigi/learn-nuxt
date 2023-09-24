@@ -52,7 +52,7 @@
 <script lang="ts" setup>
 const selected = ref("");
 
-function onSelected(params: "top") {
+function onSelected(params: "top" | "new" | "hot" | "closed") {
   selected.value = params;
 }
 </script>
