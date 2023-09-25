@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <TheHeader />
 
     <div class="flex">
       <div class="w-full justify-center flex items-center">
@@ -54,7 +54,11 @@ import { useField, useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 import * as z from "zod";
 
-import Header from "~/layouts/Header.vue";
+const now = new Date();
+const time = now.getTime();
+const expireTime = time + 1000 * 36000;
+now.setTime(expireTime);
+const token = useCookie("token", { expires: now });
 
 const { handleSubmit, errors } = useForm({
   validationSchema: toTypedSchema(
@@ -81,8 +85,9 @@ const { value: email } = useField("email");
 const { value: password } = useField("password");
 const { value: passwordConfirm } = useField("passwordConfirm");
 
-const onSubmit = handleSubmit(values => {
-  alert(JSON.stringify(values, null, 2));
+const onSubmit = handleSubmit(() => {
+  navigateTo("/questions");
+  token.value = "erik";
 });
 </script>
 
